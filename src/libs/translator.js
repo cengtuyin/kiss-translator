@@ -1471,6 +1471,7 @@ export class Translator {
           .replace(/Ext/gi, "扩展")
           .replace(/Next/gi, "下一个")
           .replace(/Previous/gi, "上一个")
+          .replace(/Report/gi, "报告")
 
           .replace(/this/gi, "这")
           .replace(/if/gi, "如果")
