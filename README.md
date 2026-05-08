@@ -1,3 +1,5 @@
+# 此为自用修改
+
 # KISS Translator 简约翻译
 
 [English](README.en.md) | [中文](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
