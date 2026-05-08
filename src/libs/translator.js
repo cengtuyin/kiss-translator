@@ -1504,7 +1504,7 @@ export class Translator {
       // 原文与译文完全一致（忽略首尾空格及大小写），则不显示译文
       if (
         cleanString(translatedText) === "" ||
-        cleanString(processedString).trim().replace(/[^\p{Script=Han}]/gu, "") !== "" ||
+        (processedString).trim().replace(/[^\p{Script=Han}]/gu, "") !== "" ||
         cleanString(translatedText) === cleanString(processedString)
       ) {
         this.#withViewportAnchor(() => {
