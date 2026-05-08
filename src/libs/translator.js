@@ -1427,6 +1427,14 @@ export class Translator {
         return;
       }
 
+      // 原文与译文完全一致（忽略首尾空格及大小写），则不显示译文
+      if (translatedText.trim().toLowerCase() === processedString.trim().toLowerCase()) {
+        this.#withViewportAnchor(() => {
+          wrapper.remove();
+        });
+        return;
+      }
+
       const htmlString = this.#restoreFromTranslation(
         translatedText,
         placeholderMap
