@@ -10,8 +10,6 @@
 
 订阅: https://cengtuyin.24h.fyi/private/src/kiss-translator.user.js
 
-订阅: https://cengtuyin.24h.fyi/private/src/kiss-translator.user.js
-
 # KISS Translator 简约翻译
 
 [English](README.en.md) | [中文](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
