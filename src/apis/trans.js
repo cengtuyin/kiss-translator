@@ -289,7 +289,13 @@ const parseSTRes = (raw) => {
   return [];
 };
 
-const siliconflowEffortMap = { max: 32768, high: 16384, medium: 8192, low: 4096, minimal: 2048 };
+const siliconflowEffortMap = {
+  max: 32768,
+  high: 16384,
+  medium: 8192,
+  low: 4096,
+  minimal: 2048,
+};
 
 const injectThinking = (body, { apiType, thinkingMode, thinkingEffort }) => {
   if (thinkingMode === "auto") return;
@@ -301,7 +307,9 @@ const injectThinking = (body, { apiType, thinkingMode, thinkingEffort }) => {
 
   switch (param.type) {
     case "deepseek":
-      body.thinking = { type: thinkingMode === "enabled" ? "enabled" : "disabled" };
+      body.thinking = {
+        type: thinkingMode === "enabled" ? "enabled" : "disabled",
+      };
       if (thinkingMode === "enabled" && hasEffort) {
         body.reasoning_effort = thinkingEffort;
       }
@@ -719,7 +727,11 @@ const genOpenRouter = ({
     stream: useStream,
   };
 
-  injectThinking(body, { apiType: OPT_TRANS_OPENROUTER, thinkingMode, thinkingEffort });
+  injectThinking(body, {
+    apiType: OPT_TRANS_OPENROUTER,
+    thinkingMode,
+    thinkingEffort,
+  });
 
   const headers = {
     "Content-type": "application/json",
@@ -760,7 +772,11 @@ const genOllama = ({
     max_tokens: maxTokens,
   };
 
-  injectThinking(body, { apiType: OPT_TRANS_OLLAMA, thinkingMode, thinkingEffort });
+  injectThinking(body, {
+    apiType: OPT_TRANS_OLLAMA,
+    thinkingMode,
+    thinkingEffort,
+  });
   body.stream = useStream;
 
   const headers = {
@@ -1295,7 +1311,16 @@ async function* handleTranslateStreamInternal(
   texts,
   input,
   init,
-  { apiType, history, userMsg, usePool, fetchInterval, fetchLimit, httpTimeout, streamRenderMode }
+  {
+    apiType,
+    history,
+    userMsg,
+    usePool,
+    fetchInterval,
+    fetchLimit,
+    httpTimeout,
+    streamRenderMode,
+  }
 ) {
   const results = new Array(texts.length).fill(null);
   let fullContent = "";

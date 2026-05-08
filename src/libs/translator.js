@@ -1363,7 +1363,10 @@ export class Translator {
 
       // 流式渲染模式
       const streamRenderMode = this.#apiSetting.streamRenderMode || "disabled";
-      const isStreamRender = streamRenderMode !== "disabled" && this.#apiSetting.useStream && this.#apiSetting.useBatchFetch;
+      const isStreamRender =
+        streamRenderMode !== "disabled" &&
+        this.#apiSetting.useStream &&
+        this.#apiSetting.useBatchFetch;
 
       // RAF 缓冲
       let rafId = null;
@@ -1427,8 +1430,27 @@ export class Translator {
         return;
       }
 
+      function cleanString(str) {
+        return str
+          .trim()
+          .replace(/\<.*?\>|\<\/.*?\>|[^\d\w\x]/g, "")
+          .replace(/Android/gi, "安卓")
+          .replace(/Releases/gi, "发行")
+          .replace(/Release/gi, "版本")
+          .replace(/languages?/gi, "语言")
+          .replace(/Chrome/gi, "镀铬")
+          .replace(/Safari/gi, "狩猎")
+          .replace(/Thunderbird/gi, "雷鸟")
+          .replace(/Tencent/gi, "腾讯")
+          .replace(/Google/gi, "谷歌")
+          .replace(/Microsoft/gi, "微软")
+          .toLowerCase();
+      }
       // 原文与译文完全一致（忽略首尾空格及大小写），则不显示译文
-      if (translatedText.trim().toLowerCase() === processedString.trim().toLowerCase()) {
+      if (
+        cleanString(translatedText) === "" ||
+        cleanString(translatedText) === cleanString(processedString)
+      ) {
         this.#withViewportAnchor(() => {
           wrapper.remove();
         });

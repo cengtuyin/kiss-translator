@@ -1,66 +1,71 @@
 # 此为自用修改
 
+> 1. 翻译后内容与翻译前一致则不显示翻译
+> 2. 翻译内容过少则不显示翻译（硬编码、仅英转中支持）
+> 3. 避免无文本内容被加载？
+> 4. 更换更慢的源站
+
 # KISS Translator 简约翻译
 
 [English](README.en.md) | [中文](README.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
 
-一个简约、开源的 [双语对照翻译扩展 & 油猴脚本](https://github.com/fishjar/kiss-translator)。
+一个简约、开源的 [双语对照翻译扩展 &amp; 油猴脚本](https://github.com/fishjar/kiss-translator)。
 
 [kiss-translator.webm](https://github.com/fishjar/kiss-translator/assets/1157624/f7ba8a5c-e4a8-4d5a-823a-5c5c67a0a47f)
 
 ## 特性
 
-- [x] 保持简约
-- [x] 开放源代码
-- [x] 适配常见浏览器
-  - [x] Chrome/Edge
-  - [x] Firefox
-  - [x] Kiwi (Android)
-  - [x] Orion (iOS)
-  - [x] Safari
-  - [x] Thunderbird
-- [x] 支持多种翻译服务
-  - [x] Google/Microsoft
-  - [x] Tencent/Volcengine
-  - [x] OpenAI/Gemini/Claude/Ollama/DeepSeek/OpenRouter
-  - [x] DeepL/DeepLX
-  - [x] AzureAI/CloudflareAI
-  - [x] Chrome浏览器内置AI翻译(BuiltinAI)
-- [x] 覆盖常见翻译场景
-  - [x] 网页双语对照翻译
-  - [x] 输入框翻译
+- [X] 保持简约
+- [X] 开放源代码
+- [X] 适配常见浏览器
+  - [X] Chrome/Edge
+  - [X] Firefox
+  - [X] Kiwi (Android)
+  - [X] Orion (iOS)
+  - [X] Safari
+  - [X] Thunderbird
+- [X] 支持多种翻译服务
+  - [X] Google/Microsoft
+  - [X] Tencent/Volcengine
+  - [X] OpenAI/Gemini/Claude/Ollama/DeepSeek/OpenRouter
+  - [X] DeepL/DeepLX
+  - [X] AzureAI/CloudflareAI
+  - [X] Chrome浏览器内置AI翻译(BuiltinAI)
+- [X] 覆盖常见翻译场景
+  - [X] 网页双语对照翻译
+  - [X] 输入框翻译
     - 通过快捷键立即将输入框内文本翻译成其他语言
-  - [x] 划词翻译
-    - [x] 任意页面打开翻译框，可用多种翻译服务对比翻译
-    - [x] 英文词典翻译
-    - [x] 收藏词汇
-  - [x] 鼠标悬停翻译
-  - [x] YouTube 字幕翻译
+  - [X] 划词翻译
+    - [X] 任意页面打开翻译框，可用多种翻译服务对比翻译
+    - [X] 英文词典翻译
+    - [X] 收藏词汇
+  - [X] 鼠标悬停翻译
+  - [X] YouTube 字幕翻译
     - 支持任意翻译服务对视频字幕进行翻译并双语显示
     - 内置基础的字幕合并与断句算法，提升翻译效果
     - 支持AI断句功能，可进一步提升翻译质量
     - 自定义字幕样式
-- [x] 支持多样翻译效果
-  - [x] 支持自动识别文本与手动规则两种模式
+- [X] 支持多样翻译效果
+  - [X] 支持自动识别文本与手动规则两种模式
     - 自动识别文本模式使得绝大部分网站无需编写规则也能翻译完整
     - 手动规则模式，可以针对特定网站极致优化
-  - [x] 自定义译文样式
-  - [x] 支持富文本翻译及显示，能够尽量保留原文中的链接及其他文本样式
-  - [x] 支持仅显示译文（隐藏原文）
-- [x] 翻译接口高级功能
-  - [x] 通过自定义接口，理论上支持任何翻译接口
-  - [x] 聚合批量发送翻译文本
-  - [x] 支持流式传输，实时显示翻译结果
-  - [x] 支持AI上下文会话记忆功能，提升翻译效果
-  - [x] 自定义AI术语词典
-  - [x] 所有接口均支持Hook和自定义参数等高级功能
-- [x] 跨客户端数据同步
-  - [x] KISS-Worker（cloudflare/docker）
-  - [x] WebDAV
-- [x] 自定义翻译规则
-  - [x] 规则订阅/规则分享
-  - [x] 自定义专业术语
-- [x] 自定义快捷键
+  - [X] 自定义译文样式
+  - [X] 支持富文本翻译及显示，能够尽量保留原文中的链接及其他文本样式
+  - [X] 支持仅显示译文（隐藏原文）
+- [X] 翻译接口高级功能
+  - [X] 通过自定义接口，理论上支持任何翻译接口
+  - [X] 聚合批量发送翻译文本
+  - [X] 支持流式传输，实时显示翻译结果
+  - [X] 支持AI上下文会话记忆功能，提升翻译效果
+  - [X] 自定义AI术语词典
+  - [X] 所有接口均支持Hook和自定义参数等高级功能
+- [X] 跨客户端数据同步
+  - [X] KISS-Worker（cloudflare/docker）
+  - [X] WebDAV
+- [X] 自定义翻译规则
+  - [X] 规则订阅/规则分享
+  - [X] 自定义专业术语
+- [X] 自定义快捷键
   - `Alt+Q` 开启翻译
   - `Alt+C` 切换样式
   - `Alt+K` 打开设置弹窗
@@ -75,20 +80,20 @@
 > - 浏览器扩展的功能更完整（本地语言识别、右键菜单等）
 > - 油猴脚本会遇到更多使用上的问题（跨域问题、脚本冲突等）
 
-- [x] 浏览器扩展
-  - [x] Chrome [安装地址](https://chrome.google.com/webstore/detail/kiss-translator/bdiifdefkgmcblbcghdlonllpjhhjgof?hl=zh-CN)
-    - [x] Kiwi (Android)
-    - [x] Orion (iOS)
-  - [x] Edge [安装地址](https://microsoftedge.microsoft.com/addons/detail/%E7%AE%80%E7%BA%A6%E7%BF%BB%E8%AF%91/jemckldkclkinpjighnoilpbldbdmmlh?hl=zh-CN)
-  - [x] Firefox [安装地址](https://addons.mozilla.org/zh-CN/firefox/addon/kiss-translator/)
+- [X] 浏览器扩展
+  - [X] Chrome [安装地址](https://chrome.google.com/webstore/detail/kiss-translator/bdiifdefkgmcblbcghdlonllpjhhjgof?hl=zh-CN)
+    - [X] Kiwi (Android)
+    - [X] Orion (iOS)
+  - [X] Edge [安装地址](https://microsoftedge.microsoft.com/addons/detail/%E7%AE%80%E7%BA%A6%E7%BF%BB%E8%AF%91/jemckldkclkinpjighnoilpbldbdmmlh?hl=zh-CN)
+  - [X] Firefox [安装地址](https://addons.mozilla.org/zh-CN/firefox/addon/kiss-translator/)
   - [ ] Safari
     - [ ] Safari (Mac)
-    - [ ] Safari (iOS) 
-  - [x] Thunderbird [下载地址](https://github.com/fishjar/kiss-translator/releases)
-- [x] 油猴脚本
-  - [x] Chrome/Edge/Firefox ([Tampermonkey](https://www.tampermonkey.net/)/[Violentmonkey](https://violentmonkey.github.io/)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator.user.js)
+    - [ ] Safari (iOS)
+  - [X] Thunderbird [下载地址](https://github.com/fishjar/kiss-translator/releases)
+- [X] 油猴脚本
+  - [X] Chrome/Edge/Firefox ([Tampermonkey](https://www.tampermonkey.net/)/[Violentmonkey](https://violentmonkey.github.io/)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator.user.js)
     - [Greasy Fork](https://greasyfork.org/zh-CN/scripts/472840-kiss-translator)
-  - [x] iOS Safari ([Userscripts Safari](https://github.com/quoid/userscripts)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator-ios-safari.user.js)
+  - [X] iOS Safari ([Userscripts Safari](https://github.com/quoid/userscripts)) [安装链接](https://fishjar.github.io/kiss-translator/kiss-translator-ios-safari.user.js)
 
 ## 关联项目
 
@@ -104,7 +109,7 @@
 
 ### 如何设置快捷键
 
-在插件管理那里设置，例如： 
+在插件管理那里设置，例如：
 
 - chrome [chrome://extensions/shortcuts](chrome://extensions/shortcuts)
 - firefox [about:addons](about:addons)
@@ -144,17 +149,17 @@
 
 设置页面地址： https://fishjar.github.io/kiss-translator/options.html
 
-## 未来规划 
+## 未来规划
 
  本项目为业余开发，无严格时间表，欢迎社区共建。以下为初步设想的功能方向：
 
-- [x] **聚合发送文本**：优化请求策略，减少翻译接口调用次数，提升性能。
-- [x] **增强富文本翻译**：支持更复杂的页面结构和富文本内容的准确翻译。
-- [x] **强化自定义/AI 接口**：支持流式传输、上下文记忆、多轮对话等高级 AI 功能。
-- [x] **英文词典备灾机制**：当翻译服务失效时，可切换其他词典或 fallback 到本地词典查询。
-- [x] **优化 YouTube 字幕支持**：改进流式字幕的合并与翻译体验，减少断句。
+- [X] **聚合发送文本**：优化请求策略，减少翻译接口调用次数，提升性能。
+- [X] **增强富文本翻译**：支持更复杂的页面结构和富文本内容的准确翻译。
+- [X] **强化自定义/AI 接口**：支持流式传输、上下文记忆、多轮对话等高级 AI 功能。
+- [X] **英文词典备灾机制**：当翻译服务失效时，可切换其他词典或 fallback 到本地词典查询。
+- [X] **优化 YouTube 字幕支持**：改进流式字幕的合并与翻译体验，减少断句。
 - [ ] **规则共建机制升级**：引入更灵活的规则分享、版本管理与社区评审流程。
- 
+
  如果你对某个方向感兴趣，欢迎在 [Issues](https://github.com/fishjar/kiss-translator/issues) 中讨论或提交 PR！
 
 ## 开发指引

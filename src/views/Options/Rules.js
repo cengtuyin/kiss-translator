@@ -1297,7 +1297,11 @@ function SubRules({ subRules }) {
           </center>
         ) : (
           selectedRules.map((rule) => (
-            <RuleAccordion key={rule.pattern} rule={rule} sourceUrl={selectedUrl}/>
+            <RuleAccordion
+              key={rule.pattern}
+              rule={rule}
+              sourceUrl={selectedUrl}
+            />
           ))
         )}
       </Box>

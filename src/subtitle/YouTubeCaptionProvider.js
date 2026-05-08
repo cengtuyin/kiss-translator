@@ -337,8 +337,7 @@ class YouTubeCaptionProvider {
 
   #isChatCaptionTrack(track) {
     if (!track) return false;
-    const name =
-      track.name?.simpleText || track.name?.runs?.[0]?.text || "";
+    const name = track.name?.simpleText || track.name?.runs?.[0]?.text || "";
     return /chat/i.test(name);
   }
 
@@ -383,7 +382,9 @@ class YouTubeCaptionProvider {
 
     // Chat/弹幕字幕轨道自动降级为正常字幕轨道
     if (captionTrack && this.#isChatCaptionTrack(captionTrack)) {
-      logger.debug("Youtube Provider: detected chat subtitle track, switching to normal subtitle");
+      logger.debug(
+        "Youtube Provider: detected chat subtitle track, switching to normal subtitle"
+      );
 
       const nonChatSameLang = captionTracks.find(
         (item) =>
@@ -392,7 +393,9 @@ class YouTubeCaptionProvider {
       );
 
       if (nonChatSameLang) {
-        logger.debug("Youtube Provider: switched to same-language non-chat track");
+        logger.debug(
+          "Youtube Provider: switched to same-language non-chat track"
+        );
         captionTrack = nonChatSameLang;
       } else {
         const anyNonChat = captionTracks.find(
@@ -950,10 +953,13 @@ class YouTubeCaptionProvider {
           (e) => e.start >= sub.start && e.start < sub.end
         );
         if (subEvents.length > 1) {
-          logger.debug("Youtube Provider: re-processing long sentence with pause", {
-            length: sub.text.length,
-            text: sub.text.slice(0, 50) + "...",
-          });
+          logger.debug(
+            "Youtube Provider: re-processing long sentence with pause",
+            {
+              length: sub.text.length,
+              text: sub.text.slice(0, 50) + "...",
+            }
+          );
           const reProcessed = this.#processSubtitles({
             flatEvents: subEvents,
             usePause: true,
